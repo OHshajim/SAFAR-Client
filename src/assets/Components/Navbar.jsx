@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import { set } from "firebase/database";
 
 const Navbar = () => {
     const { user, Logout } = useContext(AuthContext)
@@ -38,9 +39,19 @@ const Navbar = () => {
         ><li>My List</li></NavLink>
 
     </>
+    const [fix, setFix] = useState(false)
+    function setFixed() {
+        if (window.scrollY > 100) {
+            setFix(true)
+        }
+        else {
+            setFix(false)
+        }
+    }
+    window.addEventListener("scroll", setFixed)
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className={fix ? "navbar fixed z-10  duration-500 bg-slate-800" : "navbar bg-transparent duration-300 fixed z-10"}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
