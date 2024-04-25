@@ -9,6 +9,7 @@ import Root from './assets/Layout/Root';
 import Home from './assets/Pages/Home';
 import AuthProvider from './Provider/AuthProvider';
 import Register from './assets/Pages/Register';
+import Login from './assets/Pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<Register/>
+      },
+      {
+        path:"/login",
+        element:<Login/>
       },
     ]
   },
