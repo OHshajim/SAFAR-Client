@@ -1,29 +1,40 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
+    const { user, Logout } = useContext(AuthContext)
+    console.log(user);
+    const handleLogout = () => {
+        Logout()
+            .then(() => {
+                alert("logout")
+            })
+    }
     const links = <>
         <NavLink to="/"
-         className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg " : " px-5 py-2 rounded-lg"
-        }
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg " : " px-5 py-2 rounded-lg"
+            }
         ><li>Home</li></NavLink>
 
         <NavLink to="/all"
-         className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
-        }
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+            }
         ><li>All Tourists Spot</li></NavLink>
 
-        <NavLink to="/add" 
-        className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
-        }
+        <NavLink to="/add"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+            }
         ><li>Add Tourists Spot</li></NavLink>
 
         <NavLink to="/my"
-         className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
-        }
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+            }
         ><li>My List</li></NavLink>
 
     </>
@@ -51,9 +62,28 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    {
+                        user ?
+                            <div className="avatar ">
+                                <div className="w-11 rounded-full ring " id="clickable">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </div> :
+                            <div className="flex gap-2">
+                                <Link to="/login"><button className="btn ">Login</button></Link>
+                                <Link to="/register"><button className="btn ">Register</button></Link>
+                            </div>
+                    }
                 </div>
             </div>
+            <Tooltip anchorSelect="#clickable" place="bottom-start" clickable>
+                <div>
+                    <p>{user?.displayName}</p>
+                    <button className="btn btn-error" onClick={handleLogout}>Logout</button>
+                </div>
+            </Tooltip>
+
+
         </div>
     );
 };
