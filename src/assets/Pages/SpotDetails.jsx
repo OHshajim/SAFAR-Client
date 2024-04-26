@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
     const spot = useLoaderData()
@@ -6,6 +6,7 @@ const SpotDetails = () => {
     const { _id, spotName, location, country, seasonality, travel_time, visitorsPerYear, average_cost, image, description } = spot;
     return (
         <div className="py-20 max-w-[1600px] mx-auto">
+            <Link to="/"><button className="btn my-5">Back to Home</button></Link>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img src={image} alt={spotName} /></figure>
                 <div className="card-body">
