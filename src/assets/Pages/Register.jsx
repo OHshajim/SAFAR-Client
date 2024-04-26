@@ -47,7 +47,7 @@ const Register = () => {
     }
     return (
         <div>
-            <div className=" my-20 ">
+            <div className=" py-20 ">
                 <div className=" flex-col max-w-[1600px] mx-auto py-10">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register Now </h1>

@@ -10,6 +10,7 @@ import Home from './assets/Pages/Home';
 import AuthProvider from './Provider/AuthProvider';
 import Register from './assets/Pages/Register';
 import Login from './assets/Pages/Login';
+import AddSpots from './assets/Pages/AddSpots';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login/>
+      },
+      {
+        path:"/addSpots",
+        element:<AddSpots/>
       },
     ]
   },

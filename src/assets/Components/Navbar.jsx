@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
-import { set } from "firebase/database";
 
 const Navbar = () => {
     const { user, Logout } = useContext(AuthContext)
@@ -76,7 +75,7 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="avatar ">
-                                <div className="w-11 rounded-full ring " id="clickable">
+                                <div className="w-11 rounded-full ring clickable" id="clickable" >
                                     <img src={user.photoURL} />
                                 </div>
                             </div> :
@@ -85,14 +84,12 @@ const Navbar = () => {
                                 <Link to="/register"><button className="btn ">Register</button></Link>
                             </div>
                     }
+                    <Tooltip anchorSelect=".clickable" clickable >
+                        <p>{user?.displayName}</p>
+                        <button className="btn btn-error" onClick={handleLogout}>Logout</button>
+                    </Tooltip>
                 </div>
             </div>
-            <Tooltip anchorSelect="#clickable" place="bottom-start" clickable>
-                <div>
-                    <p>{user?.displayName}</p>
-                    <button className="btn btn-error" onClick={handleLogout}>Logout</button>
-                </div>
-            </Tooltip>
 
 
         </div>
