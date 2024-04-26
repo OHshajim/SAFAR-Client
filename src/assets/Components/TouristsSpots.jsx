@@ -3,7 +3,7 @@ import SpotsCard from "./SpotsCard";
 
 const TouristsSpots = () => {
     const spots = useLoaderData()
-    console.log(spots);
+    // console.log(spots);
     return (
         <div className="my-20 max-w-[1600px] mx-auto ">
             <div>

@@ -5,8 +5,8 @@ const AddSpots = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const spotName = form.spotName.value;
-        const country = form.country.value;
+        const tourists_spot_name = form.spotName.value;
+        const country_Name = form.country_Name.value;
         const location = form.location.value;
         const seasonality = form.seasonality.value;
         const travel_time = form.travel_time.value;
@@ -15,7 +15,7 @@ const AddSpots = () => {
         const image = form.image.value;
         const description = form.description.value;
         // console.log(name, email, spotName, location, country, seasonality, travel_time, visitorsPerYear, average_cost, image, description);
-        const spot = { name, email, spotName, location, country, seasonality, travel_time, visitorsPerYear, average_cost, image, description };
+        const spot = { name, email, tourists_spot_name, location, country_Name, seasonality, travel_time, visitorsPerYear, average_cost, image, description };
         console.log(spot);
 
         fetch("http://localhost:5000/spots", {
@@ -53,7 +53,7 @@ const AddSpots = () => {
                         </div>
                         <div className="flex flex-col w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">Country Name</label>
-                            <select className="select select-bordered" name="country">
+                            <select className="select select-bordered" name="country_Name">
                                 <option disabled selected>Select Country </option>
                                 <option>Bangladesh</option>
                                 <option>Thailand</option>

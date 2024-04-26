@@ -12,6 +12,7 @@ import Register from './assets/Pages/Register';
 import Login from './assets/Pages/Login';
 import AddSpots from './assets/Pages/AddSpots';
 import SpotDetails from './assets/Pages/SpotDetails';
+import SpotsOfSpecificCountry from './assets/Components/SpotsOfSpecificCountry';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         path:"/spotDetails/:id",
         element:<SpotDetails/>,
         loader:({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
+      },
+      {
+        path:"/spotsOfSpecificCountry/:id",
+        element:<SpotsOfSpecificCountry/>,
+        loader:({params})=>fetch(`http://localhost:5000/countries/${params.id}`)
       },
     ]
   },
