@@ -11,6 +11,7 @@ import AuthProvider from './Provider/AuthProvider';
 import Register from './assets/Pages/Register';
 import Login from './assets/Pages/Login';
 import AddSpots from './assets/Pages/AddSpots';
+import SpotDetails from './assets/Pages/SpotDetails';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path:"/addSpots",
         element:<AddSpots/>
+      },
+      {
+        path:"/spotDetails/:id",
+        element:<SpotDetails/>,
+        loader:({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
       },
     ]
   },
