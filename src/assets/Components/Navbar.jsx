@@ -5,7 +5,7 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
     const { user, Logout } = useContext(AuthContext)
-    console.log(user);
+    // console.log(user);
     const handleLogout = () => {
         Logout()
             .then(() => {
@@ -25,7 +25,7 @@ const Navbar = () => {
             }
         ><li>All Tourists Spot</li></NavLink>
 
-        <NavLink to="/add"
+        <NavLink to="/addSpots"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }

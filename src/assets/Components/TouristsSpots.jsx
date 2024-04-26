@@ -6,7 +6,7 @@ const TouristsSpots = () => {
                 <h1>Most Popular Tourists Spots </h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem earum dolor ratione libero in nam laboriosam harum, explicabo, porro, sunt pariatur corrupti ut </p>
                 <div>
-
+                    
                 </div>
             </div>
         </div>
