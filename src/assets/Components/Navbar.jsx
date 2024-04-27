@@ -31,7 +31,7 @@ const Navbar = () => {
             }
         ><li>Add Tourists Spot</li></NavLink>
 
-        <NavLink to={`/mySpots/${user.email}`}
+        <NavLink to={'/mySpots'}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
