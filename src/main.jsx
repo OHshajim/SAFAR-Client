@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/allSpots",
         element: <AllSpots />,
-        loader: ({ params }) => fetch('http://localhost:5000/spots')
+        loader: () => fetch('http://localhost:5000/spots/all')
       },
     ]
   },
