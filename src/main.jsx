@@ -15,6 +15,7 @@ import SpotDetails from './assets/Pages/SpotDetails';
 import SpotsOfSpecificCountry from './assets/Components/SpotsOfSpecificCountry';
 import AllSpots from './assets/Pages/AllSpots';
 import MySpots from './assets/Pages/MySpots';
+import PrivetRoute from './Route/PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addSpots",
-        element: <AddSpots />
+        element: <PrivetRoute><AddSpots /></PrivetRoute>
       },
       {
         path: "/spotDetails/:id",
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/mySpots",
-        element: <MySpots />,
+        element: <PrivetRoute><MySpots /></PrivetRoute>
       },
     ]
   },

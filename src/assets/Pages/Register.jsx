@@ -2,9 +2,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/Firebase.config";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
     const [error, setError] = useState("")
     const handleRegister = event => {
         setError(" ")
@@ -35,6 +38,7 @@ const Register = () => {
                 })
                     .then(() => {
                         console.log(auth.currentUser)
+                        navigate(location?.state)
                     })
                     .catch((error) => {
                         console.error(error);
@@ -43,6 +47,7 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error);
+                setError(error.message)
             })
     }
     return (
