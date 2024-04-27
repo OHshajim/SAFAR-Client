@@ -5,7 +5,7 @@ const Country = ({ country }) => {
     return (
         <div>
             <Link to={`/spotsOfSpecificCountry/${country_Name}`}>
-                <div className="card bg-base-100 shadow-xl">
+                <div className="card bg-base-100 shadow-xl ">
                     <figure><img src={image} alt={country_Name} /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{country_Name}</h2>

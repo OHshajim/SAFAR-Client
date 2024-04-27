@@ -13,38 +13,44 @@ import Login from './assets/Pages/Login';
 import AddSpots from './assets/Pages/AddSpots';
 import SpotDetails from './assets/Pages/SpotDetails';
 import SpotsOfSpecificCountry from './assets/Components/SpotsOfSpecificCountry';
+import AllSpots from './assets/Pages/AllSpots';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
-    children:[
+    element: <Root />,
+    children: [
       {
-        path:"/",
-        element:<Home/>,
-        loader:()=>fetch('http://localhost:5000/spots')
+        path: "/",
+        element: <Home />,
+        loader: () => fetch('http://localhost:5000/spots')
       },
       {
-        path:"/register",
-        element:<Register/>
+        path: "/register",
+        element: <Register />
       },
       {
-        path:"/login",
-        element:<Login/>
+        path: "/login",
+        element: <Login />
       },
       {
-        path:"/addSpots",
-        element:<AddSpots/>
+        path: "/addSpots",
+        element: <AddSpots />
       },
       {
-        path:"/spotDetails/:id",
-        element:<SpotDetails/>,
-        loader:({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
+        path: "/spotDetails/:id",
+        element: <SpotDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`)
       },
       {
-        path:"/spotsOfSpecificCountry/:id",
-        element:<SpotsOfSpecificCountry/>,
-        loader:({params})=>fetch(`http://localhost:5000/countries/${params.id}`)
+        path: "/spotsOfSpecificCountry/:id",
+        element: <SpotsOfSpecificCountry />,
+        loader: ({ params }) => fetch(`http://localhost:5000/countries/${params.id}`)
+      },
+      {
+        path: "/allSpots",
+        element: <AllSpots />,
+        loader: ({ params }) => fetch('http://localhost:5000/spots')
       },
     ]
   },
@@ -53,7 +59,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );

@@ -15,11 +15,11 @@ const Navbar = () => {
     const links = <>
         <NavLink to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg " : " px-5 py-2 rounded-lg"
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
         ><li>Home</li></NavLink>
 
-        <NavLink to="/all"
+        <NavLink to="/allSpots"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
