@@ -14,6 +14,7 @@ import AddSpots from './assets/Pages/AddSpots';
 import SpotDetails from './assets/Pages/SpotDetails';
 import SpotsOfSpecificCountry from './assets/Components/SpotsOfSpecificCountry';
 import AllSpots from './assets/Pages/AllSpots';
+import MySpots from './assets/Pages/MySpots';
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,12 @@ const router = createBrowserRouter([
       {
         path: "/allSpots",
         element: <AllSpots />,
-        loader: () => fetch('http://localhost:5000/spots/all')
+        loader: () => fetch('http://localhost:5000/spots')
+      },
+      {
+        path: "/mySpots/:id",
+        element: <MySpots />,
+        loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`)
       },
     ]
   },
