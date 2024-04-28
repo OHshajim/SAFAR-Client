@@ -24,7 +24,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className=' h-screen slide1'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-20 h-screen '>
-                            <h2 className='text-4xl font-semibold'>Explore. Dream. Discover.</h2>
+                            <h2 className='text-4xl font-semibold'>Crafting Memorable Getaways: The Artistry of Personalized Tourism Management!</h2>
                             <h1 className='text-5xl font-bold '>SAFAR</h1>
                         </div>
                     </div>

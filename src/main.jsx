@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/spots')
+        loader: () => fetch('http://localhost:5000/favoriteSpots')
       },
       {
         path: "/register",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/spotDetails/:id",
-        element: <SpotDetails />,
+        element: <PrivetRoute><SpotDetails /></PrivetRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/singleSpots/${params.id}`)
       },
       {

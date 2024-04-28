@@ -5,19 +5,23 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const MySpots = () => {
     const [spots, setSpots] = useState([])
     const { user } = useContext(AuthContext)
+    const [error, setError] = useState("")
     console.log(user?.email);
     useEffect(() => {
         fetch(`http://localhost:5000/spots/${user?.email}`)
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            setSpots(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setSpots(data)
+            })
 
     }, [user])
     return (
-        <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="py-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+                {
+                    spots.length < 1 && <p className="text-center w-screen font-bold text-3xl text-red-600">No data Added</p>
+                }
                 {
                     spots.map(spot => <SpotsCard key={spot._id} spot={spot}></SpotsCard>)
                 }

@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddSpots = () => {
+    const { user } = useContext(AuthContext)
     const handleAddSpot = event => {
         event.preventDefault();
         const form = event.target;
@@ -39,11 +42,11 @@ const AddSpots = () => {
                     <div className="w-full flex gap-5">
                         <div className="flex flex-col w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">User Name</label>
-                            <input className=" input bg-black " placeholder="Enter your name" name="name" type="text" />
+                            <input className=" input bg-black " placeholder="Enter your name" value={user.displayName} name="name" type="text" />
                         </div>
                         <div className="flex flex-col w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">User Email</label>
-                            <input className=" input bg-black " placeholder="Enter your  email" name="email" type="email" />
+                            <input className=" input bg-black " placeholder="Enter your  email" value={user.email} name="email" type="email" />
                         </div>
                     </div>
                     <div className="w-full flex gap-5">
