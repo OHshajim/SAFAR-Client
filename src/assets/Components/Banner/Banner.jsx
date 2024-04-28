@@ -24,24 +24,24 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className=' h-screen slide1'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-20 h-screen '>
-                            <h2 className='text-4xl font-semibold'>asftgasfgsdfgsdfg</h2>
-                            <h1 className='text-5xl font-bold '>SHAJIM</h1>
+                            <h2 className='text-4xl font-semibold'>Explore. Dream. Discover.</h2>
+                            <h1 className='text-5xl font-bold '>SAFAR</h1>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' h-screen slide2 '>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-20 h-screen '>
-                            <h2 className='text-4xl font-semibold'>asftgasfgsdfgsdfg</h2>
-                            <h1 className='text-5xl font-bold '>SHAJIM</h1>
+                            <h2 className='text-4xl font-semibold'>Venture Beyond: Explore, Experience, Enjoy!</h2>
+                            <h1 className='text-5xl font-bold '>SAFAR</h1>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' h-screen slide3 '>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-20 h-screen '>
-                            <h2 className='text-4xl font-semibold'>asftgasfgsdfgsdfg</h2>
-                            <h1 className='text-5xl font-bold '>SHAJIM</h1>
+                            <h2 className='text-4xl font-semibold'>Discover Hidden Gems Together.</h2>
+                            <h1 className='text-5xl font-bold '>SAFAR</h1>
                         </div>
                     </div>
                 </SwiperSlide>
