@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddSpots = () => {
     const { user } = useContext(AuthContext)
@@ -19,7 +20,7 @@ const AddSpots = () => {
         const description = form.description.value;
         // console.log(name, email, spotName, location, country, seasonality, travel_time, visitorsPerYear, average_cost, image, description);
         const spot = { name, email, tourists_spot_name, location, country_Name, seasonality, travel_time, visitorsPerYear, average_cost, image, description };
-        console.log(spot);
+        // console.log(spot);
 
         fetch("http://localhost:5000/spots", {
             method: "POST",
@@ -31,6 +32,14 @@ const AddSpots = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.acknowledged) {
+                    Swal.fire({
+                        title: 'Successful',
+                        text: 'Your Spot successfully added ',
+                        icon: 'success',
+                        confirmButtonText: 'close'
+                    })
+                }
             })
     }
     return (
