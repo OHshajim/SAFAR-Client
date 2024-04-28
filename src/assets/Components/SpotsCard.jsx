@@ -27,7 +27,7 @@ const SpotsCard = ({ spot }) => {
                             <p className="flex items-center gap-1"><PiPaperPlaneRightFill />{seasonality}</p>
                         </div>
 
-                        <Link to={`/spotDetails/${_id}`}><button className="btn btn-outline ">View Details</button></Link>
+                        <Link to={`/spotDetails/${_id}`}><button className="btn btn-outline border-cyan-500 text-cyan-500">View Details</button></Link>
                     </div>
                 </div>
             </div>

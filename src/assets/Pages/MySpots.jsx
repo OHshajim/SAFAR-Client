@@ -98,8 +98,6 @@ const MySpots = () => {
 
                 </table>
             </div>
-            {/* model */}
-
         </div>
     );
 
