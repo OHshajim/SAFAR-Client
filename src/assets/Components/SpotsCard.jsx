@@ -11,6 +11,7 @@ const SpotsCard = ({ spot }) => {
                     {
                         (description.length > 100) ? <p>{description.slice(0, 100)}...</p> : <p>{description}</p>
                     }
+                    <p>{average_cost}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/spotDetails/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                     </div>

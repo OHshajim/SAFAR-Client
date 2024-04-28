@@ -1,16 +1,30 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SpotsCard from '../Components/SpotsCard';
 
 const AllSpots = () => {
-    const spots = useLoaderData()
+    const loadSpots = useLoaderData()
+    const [spots, setSpots] = useState(loadSpots);
+    const handleShot = () => {
+        fetch('http://localhost:5000/sortedSpots')
+            .then(res => res.json())
+            .then(data => {
+                setSpots(data);
+                console.log(data);
+            })
+    }
+    const handleAll = () => {
+        setSpots(loadSpots)
+    }
+
     return (
         <div className='py-20 flex flex-col justify-center items-center max-w-[1600px] mx-auto'>
             <h1 className='text-5xl  my-10'>All Spots </h1>
             <div className="dropdown ">
-                <div tabIndex={0} role="button" className="btn m-1">Sort</div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>average_cost</a></li>
+                <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu   shadow bg-base-100 rounded-box w-36">
+                    <button className='p-2' onClick={handleAll}>All</button>
+                    <button className='p-2' onClick={handleShot}>average_cost</button>
                 </ul>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
