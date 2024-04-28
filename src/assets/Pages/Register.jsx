@@ -38,7 +38,7 @@ const Register = () => {
                 })
                     .then(() => {
                         console.log(auth.currentUser)
-                        navigate(location?.state)
+                        navigate(location?.state ? location.state : "/")
                     })
                     .catch((error) => {
                         console.error(error);

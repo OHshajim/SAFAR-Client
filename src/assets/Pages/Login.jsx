@@ -1,9 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { BsGithub } from "react-icons/bs";
+import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+
+const GoogleProvider = new GoogleAuthProvider();
+const GithubProvider = new GithubAuthProvider();
 
 const Login = () => {
-    const { Login } = useContext(AuthContext)
+    const { Login, loginWithG } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     const [error, setError] = useState("")
@@ -20,7 +26,7 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user);
-                navigate(location?.state)
+                navigate(location?.state ? location.state : "/")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -29,15 +35,36 @@ const Login = () => {
                 setError(errorMessage)
             });
     }
+    const handleGoogle = () => {
+        loginWithG(GoogleProvider)
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleGithub = () => {
+        loginWithG(GithubProvider)
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div>
             <div className=" py-20 ">
-                <div className=" flex-col max-w-[1600px] mx-auto py-10">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login Now </h1>
+                <div className=" flex-col max-w-[1600px] mx-auto p-5 sm:p-10 ">
+                    <div className="mb-10">
+                        <h1 className="text-5xl text-center font-bold">Welcome Back </h1>
+                        <h2 className="text-3xl my-2 font-bold">Please Login Now ! </h2>
                     </div>
-                    <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
-                        <form className="card-body" onSubmit={handleLogin}>
+                    <div className="card shrink-0 w-full  shadow-2xl p-7 lg:p-10">
+                        <form onSubmit={handleLogin}>
 
                             <div className="form-control">
                                 <label className="label">
@@ -60,7 +87,13 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <p className="my-2">Do not have any account ? <Link to="/register" className="font-bold text-sm ">Register</Link> now</p>
                         </form>
+                        <p className="text-center font-semibold">&& </p>
+                        <div className=" flex justify-center gap-5 pt-3 items-center">
+                            <button onClick={handleGoogle} className="btn btn-circle  text-3xl text-center"><FcGoogle /></button>
+                            <button onClick={handleGithub} className="btn btn-circle  text-3xl text-center"> <BsGithub /></button>
+                        </div>
                     </div>
                 </div>
             </div>
