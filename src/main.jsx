@@ -16,11 +16,13 @@ import SpotsOfSpecificCountry from './assets/Components/SpotsOfSpecificCountry';
 import AllSpots from './assets/Pages/AllSpots';
 import MySpots from './assets/Pages/MySpots';
 import PrivetRoute from './Route/PrivetRoute';
+import NotFound from './assets/Pages/NotFound';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement:<NotFound/>,
     children: [
       {
         path: "/",
@@ -58,7 +60,7 @@ const router = createBrowserRouter([
         path: "/mySpots",
         element: <PrivetRoute><MySpots /></PrivetRoute>
       },
-    ]
+    ],
   },
 ]);
 

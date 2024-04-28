@@ -19,6 +19,16 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(email, password);
+        if (password == "" || email == "" || name == "" || photo == "") {
+            setError("● Please Fulfill the form !!!")
+            Swal.fire({
+                title: 'Error',
+                text:"● Please Fulfill the form !!!",
+                icon: 'error',
+                confirmButtonText: 'close'
+            })
+            return;
+        }
         if (password.search(/[a-z]/) < 0) {
             setError("● password must have a Lowercase letter  ")
             return;
@@ -82,25 +92,25 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" name="name" className="input input-bordered" required />
+                                <input type="text" placeholder="name" name="name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+                                <input type="email" placeholder="email" name="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" required />
+                                <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                                <input type="password" placeholder="password" name="password" className="input input-bordered" />
                                 <label className="label text-red-500 font-medium">
                                     {
                                         error && <p>{error}</p>
