@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/Firebase.config";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -54,11 +54,11 @@ const Register = () => {
         <div>
             <div className=" py-20 ">
                 <div className=" flex-col max-w-[1600px] mx-auto py-10">
-                    <div className="text-center lg:text-left">
+                    <div className="">
                         <h1 className="text-5xl font-bold">Register Now </h1>
                     </div>
-                    <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
-                        <form className="card-body" onSubmit={handleRegister}>
+                    <div className="card shrink-0 w-full  shadow-2xl p-8 ">
+                        <form  onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -88,9 +88,10 @@ const Register = () => {
                                     }
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
+                            <div className="form-control ">
                                 <button className="btn btn-primary">register</button>
                             </div>
+                            <p className="my-2">Already  have an account ? <Link to="/login" className="font-bold text-sm ">Login</Link> now</p>
                         </form>
                     </div>
                 </div>
