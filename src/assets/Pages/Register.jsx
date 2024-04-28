@@ -118,9 +118,9 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control ">
-                                <button className="btn btn-primary">register</button>
+                                <button className="btn btn-outline border-teal-500 text-teal-500">register</button>
                             </div>
-                            <p className="my-2">Already  have an account ? <Link to="/login" className="font-bold text-sm ">Login</Link> now</p>
+                            <p className="my-2">Already  have an account ? <Link to="/login" className="font-bold text-cyan-500 text-sm ">Login</Link> now</p>
                         </form>
                     </div>
                 </div>

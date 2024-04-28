@@ -18,12 +18,12 @@ const AllSpots = () => {
     }
 
     return (
-        <div className='py-20 flex flex-col justify-center items-center max-w-[1600px] mx-auto'>
-            <h1 className='text-5xl  my-10'>All Spots </h1>
-            <div className="dropdown ">
+        <div className='py-20 flex flex-col justify-center items-center max-w-[1600px] mx-auto px-5'>
+            <h1 className='text-2xl md:text-3xl lg:text-5xl  my-10'>All Tourists Spots  </h1>
+            <div className="dropdown mb-5">
                 <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu   shadow bg-base-100 rounded-box w-36">
-                    <button className='p-2' onClick={handleAll}>All</button>
+                    <button className='p-2' onClick={handleAll}>Reset</button>
                     <button className='p-2' onClick={handleShot}>average_cost</button>
                 </ul>
             </div>

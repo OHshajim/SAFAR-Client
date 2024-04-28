@@ -73,10 +73,10 @@ const MySpots = () => {
     }
 
     return (
-        <div className="max-w-[1600px] py-20 mx-auto">
-            <h1 className="text-5xl my-10">My List </h1>
+        <div className="max-w-[1600px] py-20 mx-auto px-5">
+            <h1 className="text-2xl md:text-3xl lg:text-5xl my-10">My List : Spots </h1>
             <div className="overflow-x-auto ">
-                <table className="table border rounded-xl md:p-10 border-separate bg-[#1e36402c]">
+                <table className="table border rounded-xl md:p-10 border-separate bg-neutral">
                     <thead className="border-b border-white">
                         <tr className="text-cyan-100">
                             <th >Spot Name</th>

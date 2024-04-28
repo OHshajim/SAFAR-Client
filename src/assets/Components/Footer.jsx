@@ -3,9 +3,9 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content place-items-center">
+            <footer className="footer items-center p-5 md:p-10 bg-neutral text-neutral-content place-items-center">
                 <aside>
-                    <h2 className="text-3xl font-bold">SAFAR</h2>
+                    <h2 className="text-3xl font-bold ">SAFAR</h2>
                     <p>Providing reliable tech since 2006</p>
                 </aside>
                 <nav className=" ">
@@ -23,7 +23,7 @@ const Footer = () => {
                     </div>
                 </aside>
             </footer>
-            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer className="footer footer-center p-5 bg-base-300 text-base-content">
                 <aside>
                     <p>Copyright © 2024 - All right reserved by <span className="font-bold text-sm">SAFAR</span> Industries Ltd</p>
                 </aside>

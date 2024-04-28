@@ -122,9 +122,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-outline border-cyan-500 text-cyan-500">Login</button>
                             </div>
-                            <p className="my-2">Do not have any account ? <Link to="/register" className="font-bold text-sm ">Register</Link> now</p>
+                            <p className="my-2">Do not have any account ? <Link to="/register" className="font-bold text-teal-500 text-sm ">Register</Link> now</p>
                         </form>
                         <p className="text-center font-semibold">&& </p>
                         <div className=" flex justify-center gap-5 pt-3 items-center">
