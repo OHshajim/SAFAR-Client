@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const CountrySpotCard = ({ spot }) => {
     const { _id, tourists_spot_name, country_Name, average_cost, location, description, seasonality } = spot;
-    console.log(spot);
+    // console.log(spot);
     return (
         <div className="my-20 ">
             <div className="card bg-base-100 shadow-xl">

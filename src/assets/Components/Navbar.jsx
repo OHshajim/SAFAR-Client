@@ -78,7 +78,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">SAFAR</a>
+                    <a className="btn btn-ghost text-xl px-0 sm:px-5">SAFAR</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -96,8 +96,8 @@ const Navbar = () => {
                                 </div>
                             </div> :
                             <div className="flex gap-2">
-                                <Link to="/login"><button className="btn btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
-                                <Link to="/register"><button className="btn btn-outline border-teal-500 text-teal-500">Register</button></Link>
+                                <Link to="/login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
+                                <Link to="/register"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-teal-500 text-teal-500">Register</button></Link>
                             </div>
                     }
                     <Tooltip anchorSelect=".clickable" clickable >
@@ -106,7 +106,7 @@ const Navbar = () => {
                     </Tooltip>
                 </div>
 
-                <label className="cursor-pointer grid place-items-center px-5">
+                <label className="cursor-pointer grid place-items-center sm:px-5">
                     <input type="checkbox" value="synthwave"
                         onChange={themeSwitch}
                         checked={theme === "light" ? false : true}

@@ -52,17 +52,17 @@ const AddSpots = () => {
                     <div className="w-full flex md:flex-row  flex-col gap-5">
                         <div className="flex flex-col md:w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">User Name</label>
-                            <input className=" input bg-[#9f9f9f42] "  placeholder="Enter your name" value={user.displayName} name="name" type="text" />
+                            <input className=" input bg-[#9f9f9f42] " placeholder="Enter your name" value={user.displayName} name="name" type="text" required />
                         </div>
                         <div className="flex flex-col md:w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">User Email</label>
-                            <input className=" input bg-[#9f9f9f42] "  placeholder="Enter your  email" value={user.email} name="email" type="email" />
+                            <input className=" input bg-[#9f9f9f42] " placeholder="Enter your  email" value={user.email} name="email" type="email" required />
                         </div>
                     </div>
                     <div className="w-full flex md:flex-row  flex-col gap-5">
                         <div className="flex flex-col md:w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">Tourists spot name</label>
-                            <input className=" input bg-[#9f9f9f42] "  placeholder="Tourists spot name" name="spotName" type="text" />
+                            <input className=" input bg-[#9f9f9f42] " placeholder="Tourists spot name" name="spotName" type="text" />
                         </div>
                         <div className="flex flex-col md:w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">Country Name</label>

@@ -97,8 +97,8 @@ const Login = () => {
             <div className=" py-20 ">
                 <div className=" flex-col max-w-[1600px] mx-auto p-5 sm:p-10 ">
                     <div className="mb-10">
-                        <h1 className="text-5xl text-center font-bold">Welcome Back </h1>
-                        <h2 className="text-3xl my-2 font-bold">Please Login Now ! </h2>
+                        <h1 className="text-2xl md:text-3xl lg:text-5xl text-center font-bold">Welcome Back </h1>
+                        <h2 className="text-xl md:text-3xl my-2 font-bold">Please Login Now ! </h2>
                     </div>
                     <div className="card shrink-0 w-full  shadow-2xl p-7 lg:p-10">
                         <form onSubmit={handleLogin}>

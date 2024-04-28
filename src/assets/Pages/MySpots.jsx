@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const MySpots = () => {
     const [spots, setSpots] = useState([])
+    const [loading,setLoad] =useState(true)
     const { user } = useContext(AuthContext)
     useEffect(() => {
         fetch(`http://localhost:5000/spots/${user?.email}`)
@@ -12,9 +13,10 @@ const MySpots = () => {
             .then(data => {
                 // console.log(data);
                 setSpots(data)
+                setLoad(false)
             })
 
-    }, [user,spots])
+    }, [user, spots])
     const handleDelete = (_id) => {
 
         Swal.fire({
@@ -33,7 +35,7 @@ const MySpots = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -59,7 +61,7 @@ const MySpots = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'success',
@@ -74,7 +76,7 @@ const MySpots = () => {
 
     return (
         <div className="max-w-[1600px] py-20 mx-auto px-5">
-            <h1 className="text-2xl md:text-3xl lg:text-5xl my-10">My List : Spots </h1>
+            <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold my-10">My List : Spots </h1>
             <div className="overflow-x-auto ">
                 <table className="table border rounded-xl md:p-10 border-separate bg-neutral">
                     <thead className="border-b border-white">
@@ -87,6 +89,10 @@ const MySpots = () => {
                             <th >Delete</th>
                         </tr>
                     </thead>
+                    {
+                        loading && <div className="flex justify-center items-center w-full"> <span className="flex justify-center items-center w-16 loading loading-bars my-10"></span></div>
+
+                    }
                     {
                         spots.map((spot) => <SpotsTable
                             key={spot._id}

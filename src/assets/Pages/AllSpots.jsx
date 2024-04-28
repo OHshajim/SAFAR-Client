@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SpotsCard from '../Components/SpotsCard';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AllSpots = () => {
     const loadSpots = useLoaderData()
     const [spots, setSpots] = useState(loadSpots);
+    const { loading } = useContext(AuthContext)
+
     const handleShot = () => {
         fetch('http://localhost:5000/sortedSpots')
             .then(res => res.json())
             .then(data => {
                 setSpots(data);
-                console.log(data);
+                // console.log(data);
             })
     }
     const handleAll = () => {
@@ -27,6 +30,10 @@ const AllSpots = () => {
                     <button className='p-2' onClick={handleShot}>average_cost</button>
                 </ul>
             </div>
+            {
+                loading && <div className="flex justify-center items-center w-full"> <span className="flex justify-center items-center w-16 loading loading-bars my-10"></span></div>
+
+            }
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     spots.map(spot => <SpotsCard key={spot._id} spot={spot} />)

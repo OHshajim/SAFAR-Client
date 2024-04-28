@@ -23,7 +23,7 @@ const Register = () => {
             setError("● Please Fulfill the form !!!")
             Swal.fire({
                 title: 'Error',
-                text:"● Please Fulfill the form !!!",
+                text: "● Please Fulfill the form !!!",
                 icon: 'error',
                 confirmButtonText: 'close'
             })
@@ -51,8 +51,8 @@ const Register = () => {
                         console.log(auth.currentUser)
                         navigate(location?.state ? location.state : "/");
                         Swal.fire({
-                            title: 'Successfully logged in',
-                            text: 'Thank you for login ',
+                            title: 'Congratulations',
+                            text: 'Successfully Registered',
                             icon: 'success',
                             confirmButtonText: 'close'
                         })
@@ -70,24 +70,24 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error);
-                setError(error.message)
-                Swal.fire({
-                    title: 'Error',
-                    text: `${error.message}`,
-                    icon: 'error',
-                    confirmButtonText: 'close'
-                })
+                // setError(error.message)
+                // Swal.fire({
+                //     title: 'Error',
+                //     text: `${error.message}`,
+                //     icon: 'error',
+                //     confirmButtonText: 'close'
+                // })
             })
     }
     return (
         <div>
             <div className=" py-20 ">
-                <div className=" flex-col max-w-[1600px] mx-auto py-10">
+                <div className=" flex-col max-w-[1600px] mx-auto py-10 px-5">
                     <div className="">
-                        <h1 className="text-5xl font-bold">Register Now </h1>
+                        <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">Register Now </h1>
                     </div>
-                    <div className="card shrink-0 w-full  shadow-2xl p-8 ">
-                        <form onSubmit={handleRegister}>
+                    <div className="card shrink-0 w-full  shadow-2xl p-8">
+                        <form onSubmit={handleRegister} className="space-y-3">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
