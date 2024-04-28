@@ -8,9 +8,6 @@ const Navbar = () => {
     // console.log(user);
     const handleLogout = () => {
         Logout()
-            .then(() => {
-                alert("logout")
-            })
     }
     const links = <>
         <NavLink to="/"

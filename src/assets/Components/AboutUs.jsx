@@ -1,8 +1,9 @@
 const AboutUs = () => {
     return (
         <div className="max-w-[1600px] mx-auto my-20 ">
-            <div className="mb-10">
-                <h1 className="text-center text-2xl lg:text-4xl font-semibold my-3" data-aos="fade-in">Discover the SAFAR Difference: Our Story</h1>
+            <div className="my-10">
+                <h3 className="text-center">About Us</h3>
+                <h1 className="text-center text-2xl lg:text-4xl font-semibold mt-2" data-aos="fade-in">Discover the SAFAR Difference: Our Story</h1>
             </div>
 
             {/* Achievements */}

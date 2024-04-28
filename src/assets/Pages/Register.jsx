@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/Firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -38,16 +39,34 @@ const Register = () => {
                 })
                     .then(() => {
                         console.log(auth.currentUser)
-                        navigate(location?.state ? location.state : "/")
+                        navigate(location?.state ? location.state : "/");
+                        Swal.fire({
+                            title: 'Successfully logged in',
+                            text: 'Thank you for login ',
+                            icon: 'success',
+                            confirmButtonText: 'close'
+                        })
                     })
                     .catch((error) => {
-                        console.error(error);
+                        // console.error(error);
+                        Swal.fire({
+                            title: 'Error',
+                            text: `${error.message}`,
+                            icon: 'error',
+                            confirmButtonText: 'close'
+                        })
                     });
 
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message)
+                Swal.fire({
+                    title: 'Error',
+                    text: `${error.message}`,
+                    icon: 'error',
+                    confirmButtonText: 'close'
+                })
             })
     }
     return (
@@ -58,7 +77,7 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register Now </h1>
                     </div>
                     <div className="card shrink-0 w-full  shadow-2xl p-8 ">
-                        <form  onSubmit={handleRegister}>
+                        <form onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

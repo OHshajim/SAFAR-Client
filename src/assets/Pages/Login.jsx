@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const GoogleProvider = new GoogleAuthProvider();
 const GithubProvider = new GithubAuthProvider();
@@ -25,14 +26,26 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
                 navigate(location?.state ? location.state : "/")
+                Swal.fire({
+                    title: 'Successfully logged in',
+                    text: 'Thank you for login ',
+                    icon: 'success',
+                    confirmButtonText: 'close'
+                })
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(error);
+                // console.log(error);
                 setError(errorMessage)
+                Swal.fire({
+                    title: 'Error',
+                    text: `${errorMessage}`,
+                    icon: 'error',
+                    confirmButtonText: 'close'
+                })
             });
     }
     const handleGoogle = () => {
@@ -40,9 +53,21 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : "/")
+                Swal.fire({
+                    title: 'Successfully logged in',
+                    text: 'Thank you for login ',
+                    icon: 'success',
+                    confirmButtonText: 'close'
+                })
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    title: 'Error',
+                    text: `${error.message}`,
+                    icon: 'error',
+                    confirmButtonText: 'close'
+                })
             })
     }
     const handleGithub = () => {
@@ -50,9 +75,21 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : "/")
+                Swal.fire({
+                    title: 'Successfully logged in',
+                    text: 'Thank you for login ',
+                    icon: 'success',
+                    confirmButtonText: 'close'
+                })
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Try again',
+                    icon: 'error',
+                    confirmButtonText: 'close'
+                })
             })
     }
     return (
