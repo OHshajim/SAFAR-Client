@@ -10,7 +10,7 @@ const SpotsCard = ({ spot }) => {
     return (
         <div>
             <div className="card   shadow-xl max-h-[600px]">
-                <img src={image} alt={tourists_spot_name} className="mx-3 w-full sm:h-[300px] min-h-[200px] rounded-lg" />
+                <img src={image} alt={tourists_spot_name} className=" w-full sm:h-[300px] min-h-[200px] rounded-lg" />
                 <div className="card-body">
                     <p className="flex items-center gap-2"><FaLocationDot /> {country_Name}</p>
                     <h2 className="card-title">{tourists_spot_name}</h2>

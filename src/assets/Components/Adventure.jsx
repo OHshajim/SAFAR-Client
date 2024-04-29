@@ -4,7 +4,7 @@ const Adventure = () => {
     return (
         <div className="max-w-[1600px] mx-auto my-20 px-5">
             <h3 className="text-center text-base md:text-xl">Upcoming Blogs</h3>
-            <h1 className="text-2xl md:text-3xl lg:text-5xl text-center mb-10 mt-2">Go Adventure Places</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-5xl text-center mb-10 mt-2 font-bold">Go Adventure Places</h1>
             <div className="px-5">
                 <Swiper
                     modules={[Pagination, Scrollbar]}

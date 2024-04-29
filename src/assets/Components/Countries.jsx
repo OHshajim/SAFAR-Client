@@ -6,7 +6,7 @@ const Countries = () => {
     const [loading, setLoad] = useState(true)
     // setLoad(true)
     useEffect(() => {
-        fetch('http://localhost:5000/countries')
+        fetch('https://b9a10-server-side-one.vercel.app/countries')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -17,7 +17,7 @@ const Countries = () => {
     return (
         <div className="max-w-[1600px] mx-auto my-20 px-5">
             <h3 className="text-center text-base md:text-xl">Explore The Word</h3>
-            <h1 className="text-center text-2xl md:text-3xl lg:text-5xl mb-10 mt-2">Explore The Beautiful Places Around Us </h1>
+            <h1 className="text-center text-2xl md:text-3xl lg:text-5xl mb-10 mt-2 font-bold">Explore The Beautiful Places Around Us </h1>
             {
                 loading && <div className="flex justify-center items-center w-full"> <span className="flex justify-center items-center w-16 loading loading-bars my-10"></span></div>
 

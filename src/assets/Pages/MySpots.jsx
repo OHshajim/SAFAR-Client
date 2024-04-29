@@ -8,7 +8,7 @@ const MySpots = () => {
     const [loading,setLoad] =useState(true)
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/spots/${user?.email}`)
+        fetch(`https://b9a10-server-side-one.vercel.app/spots/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -30,7 +30,7 @@ const MySpots = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/spots/${_id}`, {
+                fetch(`https://b9a10-server-side-one.vercel.app/spots/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -52,7 +52,7 @@ const MySpots = () => {
 
 
     const handleUpdate = (UpdatedSpot, _id) => {
-        fetch(`http://localhost:5000/spots/${_id}`, {
+        fetch(`https://b9a10-server-side-one.vercel.app/spots/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

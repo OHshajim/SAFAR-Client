@@ -7,7 +7,7 @@ const CountrySpotCard = ({ spot }) => {
     const { _id, tourists_spot_name, country_Name, average_cost, location, description, seasonality } = spot;
     // console.log(spot);
     return (
-        <div className="my-20 ">
+        
             <div className="card bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title ">{tourists_spot_name}</h2>
@@ -31,7 +31,6 @@ const CountrySpotCard = ({ spot }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

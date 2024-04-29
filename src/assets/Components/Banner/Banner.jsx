@@ -26,7 +26,9 @@ const Banner = () => {
                     <div className=' h-screen slide1'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-5 sm:px-20 h-screen '>
                             <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Crafting Memorable Getaways: <br />
-                                <Typewriter words={[' The Artistry of Personalized Tourism Management!']} />
+                                <Typewriter
+                                    loop={5}
+                                    words={[' The Artistry of Personalized Tourism Management!']} />
 
 
                             </h2>
@@ -38,7 +40,9 @@ const Banner = () => {
                     <div className=' h-screen slide2 '>
                         <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-5 sm:px-20 h-screen '>
                             <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Venture Beyond:
-                                <Typewriter words={["Explore", "Experience", "Enjoy!"]} /></h2>
+                                <Typewriter
+                                    loop={5}
+                                    words={["Explore", "Experience", "Enjoy!"]} /></h2>
                             <h1 className='text-3xl lg:text-5xl font-bold my-5'>SAFAR</h1>
                         </div>
                     </div>

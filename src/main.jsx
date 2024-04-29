@@ -22,12 +22,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement:<NotFound/>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/favoriteSpots')
+
       },
       {
         path: "/register",
@@ -44,17 +44,16 @@ const router = createBrowserRouter([
       {
         path: "/spotDetails/:id",
         element: <PrivetRoute><SpotDetails /></PrivetRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/singleSpots/${params.id}`)
+        loader: ({ params }) => fetch(`https://b9a10-server-side-one.vercel.app/singleSpots/${params.id}`)
       },
       {
         path: "/spotsOfSpecificCountry/:id",
         element: <SpotsOfSpecificCountry />,
-        loader: ({ params }) => fetch(`http://localhost:5000/countries/${params.id}`)
+        loader: ({ params }) => fetch(`https://b9a10-server-side-one.vercel.app/countries/${params.id}`)
       },
       {
         path: "/allSpots",
         element: <AllSpots />,
-        loader: () => fetch('http://localhost:5000/spots')
       },
       {
         path: "/mySpots",

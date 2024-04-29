@@ -22,7 +22,7 @@ const AddSpots = () => {
         const spot = { name, email, tourists_spot_name, location, country_Name, seasonality, travel_time, visitorsPerYear, average_cost, image, description };
         // console.log(spot);
 
-        fetch("http://localhost:5000/spots", {
+        fetch("https://b9a10-server-side-one.vercel.app/spots", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
